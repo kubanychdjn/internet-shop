@@ -1947,6 +1947,13 @@
       "password": "$2a$10$tS7cWne9I6G87.jjjmTmze3PA2oSbfNh1Mj/lIknLYRmh3ukD5986",
       "img": "https://icon-library.com/images/50x50-icon/50x50-icon-0.jpg",
       "id": 5
+    },
+    {
+      "email": "adminKuba@front.end",
+      "password": "$2a$10$XS5Wfg9CS3Slc77n9o9eoeX8NU.Vo3JcIDshwuvBZTPy.eSPqu2zS",
+      "img": "ples",
+      "isAdmin": 1,
+      "id": 8
     }
   ],
   "reviews": [

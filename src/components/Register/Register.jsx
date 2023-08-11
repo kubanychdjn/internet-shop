@@ -8,7 +8,7 @@ const Register = () => {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [img, setImg] = useState("")
-    // const [isAdmin, setIsAdmin] = useState(0)
+    const [isAdmin, setIsAdmin] = useState(1)
     const {user, dispatch} = useContext(Context)
 
     const handleRegister = async (e) => {
@@ -18,11 +18,12 @@ const Register = () => {
             email,
             password,
             img,
-            // isAdmin
+            isAdmin
         })
         dispatch({type: "LOGIN_SUCCESS", payload: res.data.user})
         setEmail("")
         setPassword("")
+        setIsAdmin("")
         setImg("")
     }
 
