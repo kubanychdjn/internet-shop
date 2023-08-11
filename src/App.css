@@ -1107,9 +1107,146 @@
 
 
 /* ===========================ОПЛАТА ЗАКАЗА============================ */
+/* ==-=-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-CART=-=-=-=-=-=-=-=-=-=-=-=--=-= */
+
+.cart-list {
+    column-gap: 5px;
+    display: flex;
+}
 
 
-.card-Form {
+.quantity {
+    display: flex;
+    column-gap: 20px;
+}
+
+.quantity-control {
+    width: 50px;
+    border: 0;
+    margin-bottom: 20px;
+}
+
+.cartBlock {
+    margin: 25px 0;
+    display: flex;
+    column-gap: 70px;
+}
+
+.cartDescr-Block {
+    display: flex;
+    column-gap: 70px;
+}
+
+.cartDelete-btn {
+    width: 20px;
+    height: 20px;
+}
+
+.cartProduct-img {
+    width: 80px;
+    height: 80px;
+}
+
+.cartDescr {
+    width: 80px;
+}
+
+.cartContainer {
+    border: 1px solid black;
+    background-color: #eaeaea;
+    padding: 10px;
+    max-width: 750px;
+    margin: 50px auto;
+}
+
+.cart-btn {
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+}
+
+.quantity-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity-btn {
+    width: 40px;
+    height: 20px;
+    border: 0;
+    background: none;
+    font-weight: bold;
+}
+
+
+/* ===========================ОПЛАТА ЗАКАЗА============================ */
+
+/* ==-=-=-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-CART=-=-=-=-=-=-=-=-=-=-=-=--=-= */
+
+.cart-list {
+    column-gap: 5px;
+    display: flex;
+  }
+  
+
+.quantity{
+    display: flex;
+    column-gap: 20px;
+}
+.quantity-control{
+    width: 50px;
+    border: 0;
+    margin-bottom: 20px;
+}
+.cartBlock{
+    margin: 25px 0;
+    display: flex; 
+    column-gap: 70px;
+}
+.cartDescr-Block{
+    display: flex;
+    column-gap: 70px;
+}
+.cartDelete-btn{
+    width: 20px;
+    height: 20px;
+}
+.cartProduct-img{
+    width: 80px;
+    height: 80px;
+}
+.cartDescr{
+    width: 80px;
+}
+.cartContainer{
+    border: 1px solid black;
+    background-color: #eaeaea;
+    padding: 10px;
+    max-width: 750px;
+    margin: 50px auto;
+}
+.cart-btn{
+    width: 100%;
+    height: 50px;
+    border: 1px solid black;
+}
+.quantity-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.quantity-btn{
+    width: 40px;
+    height: 20px;
+    border: 0;
+    background: none;
+    font-weight: bold;
+}
+
+
+/* ===========================ОПЛАТА ЗАКАЗА============================ */
+
+
+.card-Form{
     width: 500px;
     height: 200px;
     align-items: end;
@@ -1118,10 +1255,10 @@
     display: flex;
     background-color: #fff;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-
+    
 }
 
-.card-btn {
+.card-btn{
     width: 100px;
     height: 30px;
     border-radius: 10px;
@@ -1130,19 +1267,167 @@
     transition: 0.5s;
 
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-    background-color: #00bfff;
+    background-color: #00bfff ;
     margin-bottom: 20px;
 }
-
-.card-btn:hover {
+.card-btn:hover{
     transition: 0.5s;
     background-color: white;
     color: #00bfff;
 }
 
-.masks-block {
-    color: black;
+.group 			  { 
+    position:relative; 
+    margin-bottom:45px; 
+    margin-top: 30px;
+  }
+  input 				{
+    font-size:18px;
+    padding:10px 10px 10px 5px;
+    display:block;
+    width:400px;
+    border:none;
+    border-bottom:1px solid #757575;
+  }
+  input:focus 		{ outline:none; }
+  
+  /* LABEL ======================================= */
+  label 				 {
+    color:#999; 
+    font-size:18px;
+    font-weight:normal;
+    position:absolute;
+    pointer-events:none;
+    left:5px;
+    top:10px;
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  
+  /* active state */
+  input:focus ~ label, input:valid ~ label 		{
+    top:-20px;
+    width: 400px;
+    font-size:14px;
+    color:#5264AE;
+  }
+  
+  /* BOTTOM BARS ================================= */
+  .bar 	{ position:relative; display:block; width:400px; }
+  .bar:before, .bar:after 	{
+    content:'';
+    height:2px; 
+    width:0;
+    bottom:1px; 
+    position:absolute;
+    background:#5264AE; 
+    transition:0.2s ease all; 
+    -moz-transition:0.2s ease all; 
+    -webkit-transition:0.2s ease all;
+  }
+  .bar:before {
+    left:50%;
+  }
+  .bar:after {
+    right:50%; 
+  }
+  
+  /* active state */
+  input:focus ~ .bar:before, input:focus ~ .bar:after {
+    width:50%;
+  }
+  
+  /* HIGHLIGHTER ================================== */
+  .highlight {
+    position:absolute;
+    height:60%; 
+    width:100px; 
+    top:25%; 
+    left:0;
+    pointer-events:none;
+    opacity:0.5;
+  }
+  
+  /* active state */
+  input:focus ~ .highlight {
+    -webkit-animation:inputHighlighter 0.3s ease;
+    -moz-animation:inputHighlighter 0.3s ease;
+    animation:inputHighlighter 0.3s ease;
+  }
+  
+  /* ANIMATIONS ================ */
+  @-webkit-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @-moz-keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+  @keyframes inputHighlighter {
+      from { background:#5264AE; }
+    to 	{ width:0; background:transparent; }
+  }
+
+
+.UserAdress-form{
+    margin-top: 200px;
 }
+.Checkout-title{
+    margin-top: 90px;
+}
+.UserData-form{
+    margin-top: 50px;
+}
+.Checkout-box{
+    display: flex;
+    justify-content: space-between;
+}
+.Pay-box{
+    margin-top: 100px;
+}
+.payBox-title{
+    font-size: 20px;
+}
+.payBox-descr{
+    display: flex;
+    justify-content: space-between;
+}
+
+.payBox-colorBGC{
+    background-color: #F5DEB370;
+    padding: 10px;
+}
+
+.pay-radio{
+    border: none;
+    border-radius: 100;
+}
+
+.pay-Block{
+    display: flex;
+    flex-direction: row;
+}
+.pay-inp{
+    width: 50px !important;
+    background-color: red !important;
+}
+.payBtn{
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    color: white;
+    transition: 0.8s;
+    background-color: #567D7B;
+}
+.payBtn:hover{
+    transition: 0.8s;
+
+    background-color: #569990;
+}
+
 
 /*----------------------------Footer------------------*/
 .footer-block {

@@ -1,21 +1,114 @@
 import React from 'react';
-import CheckoutForm from './CheckoutForm';
-// import { Elements } from '@stripe/react-stripe-js';
-// import { loadStripe } from '@stripe/stripe-js';
+import { useSelector } from 'react-redux';
+// import CheckoutForm from './CheckoutForm';
+
 
 const CheckoutPage = () => {
-    // const stripePromise = loadStripe("pk_test_51LY447HWg33SQmOYkw5NDamYDIC6nmq6E8TuAzs8BFgEIOjFEhM8GjZxjolguoAhF07s5XgS346RXTd4Fx4xz9rX00cYDOothX")
+    const products = useSelector(state => state.cart.productsCart)
+    const sum = useSelector(state => state.cart.sum)
+
+
     return (
         <div className='container'>
-            <div className=""></div>
+            <div className="Checkout-box">
+                <div className="">
+                    <div className="">
+                        <div className="Checkout-title"><h2 className=''>Оформление заказа</h2></div>
+
+                        <form className='UserData-form'>
+                            <h3>Данные покупателя</h3>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Имя</label>
+                            </div>
+
+                            <div className="group">
+                                <input type="email" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Почта</label>
+                            </div>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Телефонный Номер</label>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div className="">
+                        <form className='UserAdress-form'>
+                            <h3>Адрес получателя</h3>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Страна</label>
+                            </div>
+
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Город</label>
+                            </div>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Улица</label>
+                            </div>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Дом</label>
+                            </div>
+                            <div className="group">
+                                <input type="text" required />
+                                <span className="highlight"></span>
+                                <span className="bar"></span>
+                                <label>Квартира</label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+                <div className="Pay-box">
+                    <h2 className='payBox-title'>Ваш заказ</h2>
+                    <div className="payBox-descr">
+                        <p>Товар</p>
+                        <p>Всего</p>
+                    </div>
+                    {products.map((product) => (
+                        <div className="payBox-descr">
+                            <p>{product.title} </p>
+                            <p>{product.quantity} / {product.price}</p>
+                        </div>
+                    ))}
+                    <h2 className='payBox-title payBox-colorBGC'>Итоговая стовимость: {sum}</h2>
+                    <div className="">
+                        <p>Способ оплаты:</p>
 
 
+                        <div className="">
+                            <div className="pay-Block">
+                                <input type="radio" className='pay-inp' name='pay-tipe' /> Наличными
+                                <input type="radio" className='pay-inp' name='pay-tipe' /> Оплата картой
+                            </div>
+                            <a href='/checkout'> <button  className='payBtn'>Разместить заказ</button></a>
+                        </div>
 
-            {/* <Elements stripe={stripePromise}> */}
-            {/* </Elements> */}
-                <CheckoutForm />
+                    </div>
+                </div>
+            </div>
 
 
+            {/* <CheckoutForm /> */}
         </div>
     );
 };
