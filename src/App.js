@@ -24,6 +24,7 @@ import Bags from "./components/Bags/Bags";
 import Masks from "./components/Masks/Masks";
 import Underwear from "./components/UnderWear/Underwear";
 import Footer from "./components/Footer/Footer";
+import CategoryPage from './components/Category/CategoryPage/CategoryPage';
 
 
 
@@ -55,6 +56,7 @@ const App = () => {
             <Route path='/checkout' element={<CheckoutPage/>}/>
 
 
+            <Route path="/category"  element={<CategoryPage />}/>
             <Route path="/shorts"  element={<Shorts />}/>
             <Route path="/t-shirts"  element={<TShirts />}/>
             <Route path="/create"  element={<Create/>}/>

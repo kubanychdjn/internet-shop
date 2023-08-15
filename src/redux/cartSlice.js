@@ -19,7 +19,7 @@ const cartSlice = createSlice({
         },
         deleteProductFromCart: (state, action) => {
             state.productsCart = state.productsCart.filter((p) => p.id !== action.payload)
-            // state.sum = state.action.payload === 0 
+            // state.sum -= productsCart * quantityCart =  
             
         }
     }

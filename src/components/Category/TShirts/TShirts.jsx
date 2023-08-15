@@ -15,11 +15,7 @@ const TShirts = () => {
     return (
         <div className="container">
             <div className="tShirts">
-                <div className="t-shirts_links">
-                    <Link to="/">Главная/  Каталог одежды/</Link>
-                    <Link to="/t-shirts">Футболки</Link>
-                </div>
-
+                
 
             </div>
             <div className="tShirts-block">

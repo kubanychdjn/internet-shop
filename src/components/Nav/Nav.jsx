@@ -86,13 +86,14 @@ const Nav = () => {
                         <div className="header-bot">
                             <ul className="header-menu">
                                 <Link className="header-link" to="/">Главная</Link>
+                                <Link className="header-link" to="/category ">Категория</Link>
                                 <Link className="header-link" to="/aboutUs">О нас</Link>
                                 <Link className="header-link" to="/delivery">Доставка</Link>
                                 <Link className="header-link" to="/payment">Оплата</Link>
-                                <Link className="header-link" to="/services">Услуги</Link>
                             </ul>
                             <div className="header-bot_info">
-                                <p className="header-number"><span className="text-bold">(996)557-02-07-69</span></p>
+                                <Link to='/profile'><img className='nav-icon' src="https://cdn-icons-png.flaticon.com/512/16/16363.png" alt="" /></Link>
+                                <Link to='/cart'><img className='nav-icon' src="https://cdn-icons-png.flaticon.com/512/1374/1374128.png" alt="" /></Link>
                             </div>
                         </div>
 

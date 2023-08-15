@@ -1,5 +1,8 @@
+import { Elements } from '@stripe/react-stripe-js';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import CheckoutForm from './CheckoutForm';
+import { loadStripe } from '@stripe/stripe-js';
 // import CheckoutForm from './CheckoutForm';
 
 
@@ -7,6 +10,8 @@ const CheckoutPage = () => {
     const products = useSelector(state => state.cart.productsCart)
     const sum = useSelector(state => state.cart.sum)
 
+
+    const stripePromise = loadStripe('pk_test_51LY447HWg33SQmOYkw5NDamYDIC6nmq6E8TuAzs8BFgElOjFEhM8GjZxjoIguoAhF07s5XgS346RXTd4Fx4xz9rX00cYDOothX');
 
     return (
         <div className='container'>
@@ -100,9 +105,12 @@ const CheckoutPage = () => {
                                 <input type="radio" className='pay-inp' name='pay-tipe' /> Наличными
                                 <input type="radio" className='pay-inp' name='pay-tipe' /> Оплата картой
                             </div>
-                            <a href='/checkout'> <button  className='payBtn'>Разместить заказ</button></a>
                         </div>
-
+                            <div className="">
+                                <Elements stripe={stripePromise}>
+                                    <CheckoutForm/>
+                                </Elements>
+                            </div>
                     </div>
                 </div>
             </div>
