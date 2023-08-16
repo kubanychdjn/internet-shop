@@ -5,13 +5,13 @@ const CheckoutForm = () => {
     return (
         <div>
              <div className="">
-
-                <div className="card-Form   ">
+                <form className="card-Form   ">
                     <div className="">
-                    <CardElement style={{base: {fontSize: "18px"}}}/>
+                    <CardElement style={{base: {fontSize: "18px", backgroudColor: "black"}}}/>
+                    
                     </div>
                     <button className='card-btn'>Оплатить заказ</button>
-                </div>
+                </form>
              </div>
         </div>
     );

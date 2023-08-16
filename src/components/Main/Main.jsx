@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { /*useRef*/ useState } from 'react';
 import first from "../../images/1.png"
 import second from "../../images/2.png"
 import third from "../../images/3.png"
@@ -8,15 +8,12 @@ import six from "../../images/6.png"
 import seven from "../../images/7.png"
 import eight from "../../images/image 15.png"
 import nine from "../../images/9.png"
-import eleven from "../../images/11.png"
-import twelve from "../../images/12.png"
-import thirteen from "../../images/13.png"
 import bag from "../../images/bag.webp"
-import { MdOutlinePlayArrow } from "react-icons/md";
 import main1 from "../../images/main1.png"
 import main2 from "../../images/main2.png"
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
+import MainCarousel from './MainCarousel/MainCarousel';
 
 
 
@@ -25,21 +22,21 @@ const Main = () => {
     const [currentCategory, setCurrentCategory] = useState(0)
 
 
-    const carousel = useRef(null)
+    // const carousel = useRef(null)
    
-    const handleLeftClick = e => {
-        e.preventDefault()
-        carousel.current.scrollLeft -= carousel.current.offsetWidth
+    // const handleLeftClick = e => {
+    //     e.preventDefault()
+    //     carousel.current.scrollLeft -= carousel.current.offsetWidth
 
-    }
+    // }
 
    
 
-    const handleRightClick = e => {
-        e.preventDefault()
-        carousel.current.scrollLeft += carousel.current.offsetWidth
+    // const handleRightClick = e => {
+    //     e.preventDefault()
+    //     carousel.current.scrollLeft += carousel.current.offsetWidth
 
-    }
+    // }
 
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=АНИМАЦИИ-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -96,29 +93,8 @@ const Main = () => {
     
     return (
         <main>
-            <motion.section className="category"
-                initial="hidden"
-                whileInView="visible"
-            >
-                <div className="container">
-                    <div className="category-block">
-
-
-     
-
-
-                        <div className="category-container">
-
-                          
-
-
-                        </div>
-                    </div>
-                </div>
-            </motion.section>
             <section className="CarouselSection">
-                <div className="container">
-                </div>
+                    <MainCarousel/>
             </section>
             <motion.section
                 initial="hidden"
@@ -131,8 +107,8 @@ const Main = () => {
                             <motion.h1 custom={1} variants={textAnimation} className="mainScreen-title">3=2</motion.h1>
                             <motion.p custom={2} variants={textAnimation} className="main-title">Закажи три футболки, <br />
                                 а заплати только за две</motion.p>
-                            <button onClick={() => setCurrentCategory(1)} className="mainScreen-btn main-btn">Перейти в
-                                каталог
+                            <button onClick={() => setCurrentCategory()} className="mainScreen-btn main-btn"><Link to='/t-shirts'>Перейти в
+                                каталог</Link> 
                             </button>
 
                         </div>
@@ -148,6 +124,7 @@ const Main = () => {
                 </div>
 
             </motion.section>
+            
             <section className={currentCategory !== 0 ? "find-active " : "find"}>
                 <div className="container">
                     <h2 className="main-title">Что вы ищите?</h2>
@@ -322,26 +299,7 @@ const Main = () => {
                 </div>
 
             </motion.section>
-            <section className="ourWorks ">
-                <div className="container">
-                    <h4 className="main-title">Примеры наших работ:</h4>
-                    <div className="carousel-content">
-                        <div className="carousel" ref={carousel}>
-                            <img className="carousel-img" src={eleven} alt="" />
-                            <img className="carousel-img" src={twelve} alt="" />
-                            <img className="carousel-img" src={thirteen} alt="" />
-                            <img className="carousel-img" src={eleven} alt="" />
-                            <img className="carousel-img" src={twelve} alt="" />
-                            <img className="carousel-img" src={thirteen} alt="" />
-
-                        </div>
-                        <div className="carousel-buttons">
-                            <MdOutlinePlayArrow onClick={handleLeftClick} className="arrow-icon" />
-                            <MdOutlinePlayArrow onClick={handleRightClick} className="arrow-icon" />
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
             <motion.section className="chooseUs ">
                 <div className="container">
                     <h5 className="main-title">Что вы получаете выбирая нас:</h5>

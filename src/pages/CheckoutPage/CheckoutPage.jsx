@@ -106,11 +106,11 @@ const CheckoutPage = () => {
                                 <input type="radio" className='pay-inp' name='pay-tipe' /> Оплата картой
                             </div>
                         </div>
-                            <div className="">
+                            <form className="">
                                 <Elements stripe={stripePromise}>
                                     <CheckoutForm/>
                                 </Elements>
-                            </div>
+                            </form>
                     </div>
                 </div>
             </div>
